@@ -1,0 +1,290 @@
+/* Reset Styles */
+body, ul, li, a, img {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Admin Header */
+.admin-header {
+    background-color: #121212;
+    color: #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    font-family: Arial, sans-serif;
+    display: flex;
+    padding: 0px 20px;
+    height: 80px;
+    width: 100%;
+    align-items: center; /* Ensure vertical centering */
+    position: relative; /* For positioning dropdown */
+}
+
+/* Navigation Wrapper */
+.nav-wrap {
+    display: flex;
+    justify-content: space-between; /* Changed to space-between for better alignment */
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo Section */
+#header-logo {
+    display: flex;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+.header-logo-cat img {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+}
+
+.header-logo-name a {
+    color: #e0e0e0;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Navigation Links */
+#header-navigation ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 80px;
+}
+
+#header-navigation ul li {
+    position: relative;
+}
+
+#header-navigation ul li a {
+    color: #bdbdbd;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#header-navigation ul li a:hover {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Create Quiz Button */
+.header-create-button a {
+    background-color: #176c35; /* Spotify Green for the button */
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.header-create-button a:hover {
+    background-color: #1ed760; /* Slightly lighter green */
+    color: #000000; 
+}
+
+/* Admin Dropdown */
+.admin-dropdown-container {
+    position: relative;
+}
+
+.admin-dropdown-button {
+    display: none; /* Hidden by default, visible on mobile via media queries */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjusted width for better touch area */
+    height: 40px; /* Adjusted height for better touch area */
+    padding: 0;
+    margin-left: 20px; /* Space between Create Quiz button and hamburger */
+}
+
+.admin-dropdown-button .fa-times {
+    opacity: 0; /* Hide the 'X' icon initially */
+}
+
+.admin-dropdown-button.active .fa-bars {
+    opacity: 0; /* Hide the hamburger icon when active */
+}
+
+.admin-dropdown-button.active .fa-times {
+    opacity: 1; /* Show the 'X' icon when active */
+}
+
+.admin-dropdown-button .fa-bars,
+.admin-dropdown-button .fa-times {
+    color: #e0e0e0;
+    font-size: 24px; /* Increased icon size */
+    transition: opacity 0.3s ease;
+}
+
+/* Dropdown Menu */
+.admin-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1e1e1e; /* Slightly lighter black for dropdown */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    width: 200px; /* Set a fixed width or adjust as needed */
+}
+
+.admin-dropdown.active {
+    display: block;
+}
+
+.admin-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-dropdown ul li {
+    padding: 10px 20px;
+}
+
+.admin-dropdown ul li a {
+    color: #bdbdbd; /* Medium grey for dropdown links */
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.admin-dropdown ul li a:hover {
+    background-color: #333333; /* Dark grey hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.admin-dropdown-profile-icon {
+    margin-right: 8px;
+}
+
+.footer {
+    text-align: center;
+    background: #000;
+    color: #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+/* Responsive Design */
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    /* Corrected from .main-nav to .nav-wrap */
+    .nav-wrap {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #header-logo {
+        margin-bottom: 10px;
+    }
+
+    /* Hide the main navigation ul list */
+    #header-navigation ul {
+        display: none;
+    }
+
+    /* Show the hamburger menu */
+    .admin-dropdown-button {
+        display: flex;
+    }
+
+    /* Adjust Create Quiz button */
+    #header-create-quiz .header-create-button a {
+        margin-top: 15px;
+        padding: 12px 20px;
+        font-size: 16px;
+        text-align: center;
+        display: block;
+        width: 100%; /* Full-width button on mobile */
+    }
+
+    /* Style the dropdown menu */
+    .admin-dropdown {
+        width: 100%; /* Make dropdown full width */
+        right: 0; /* Align to the right */
+    }
+
+    /* Style the dropdown links to be block-level for easier tapping */
+    .admin-dropdown ul li a {
+        padding: 10px 20px;
+        width: 100%;
+        display: block;
+    }
+
+    /* Remove left margin on smaller screens */
+    .admin-dropdown-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Repeat the same adjustments if necessary */
+    .nav-wrap {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #header-logo {
+        margin-bottom: 10px;
+    }
+
+    /* Hide the main navigation ul list */
+    #header-navigation {
+        display: none;
+    }
+
+    /* Show the hamburger menu */
+    .admin-dropdown-button {
+        display: flex;
+    }
+
+    /* Adjust Create Quiz button */
+    #header-create-quiz .header-create-button a {
+        margin-top: 15px;
+        padding: 12px 20px;
+        font-size: 16px;
+        text-align: center;
+        display: block;
+        width: 100%; /* Full-width button on mobile */
+    }
+
+    /* Style the dropdown menu */
+    .admin-dropdown {
+        width: 100%; /* Make dropdown full width */
+        right: 0; /* Align to the right */
+    }
+
+    /* Style the dropdown links to be block-level for easier tapping */
+    .admin-dropdown ul li a {
+        padding: 10px 20px;
+        width: 100%;
+        display: block;
+    }
+
+    /* Remove left margin on smaller screens */
+    .admin-dropdown-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
